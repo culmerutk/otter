@@ -3,6 +3,7 @@
 #include "AppFactory.h"
 #include "ModulesApp.h"
 #include "MooseSyntax.h"
+#include "LaplaceYoung.h"
 
 template<>
 InputParameters validParams<OtterApp>()
@@ -40,6 +41,7 @@ extern "C" void OtterApp__registerObjects(Factory & factory) { OtterApp::registe
 void
 OtterApp::registerObjects(Factory & factory)
 {
+  registerKernel(LaplaceYoung);
 }
 
 // External entry point for dynamic syntax association
